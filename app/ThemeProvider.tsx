@@ -3,7 +3,6 @@
 import {memo, createContext, ReactNode, useState, useEffect} from "react";
 import {ThemeProvider as MuiThemeProvider, createTheme} from "@mui/material/styles";
 import {useStickyState} from "./stickystate";
-import Head from "next/head";
 
 export type PaletteMode = 'light' | 'dark';
 
@@ -75,11 +74,6 @@ function ThemeProvider({children}: {children: ReactNode}) {
     }, [mode]);
 
     return <>
-        <Head>
-            {/* PWA primary color */}
-            <meta name="theme-color" content={theme.palette.primary.main} />
-        </Head>
-
         <ColorModeContext.Provider value={{mode: currentMode, setMode: setMode}}>
             <MuiThemeProvider theme={theme}>
                 {children}
