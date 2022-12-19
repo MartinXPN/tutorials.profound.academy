@@ -12,7 +12,7 @@ export default function Page() {
             <Stack direction="column" alignItems="center" alignContent="center" width="100%" paddingY={10} spacing={5}>
                 <SvgIcon sx={{fontSize: 100}}><Logo /></SvgIcon>
                 <Typography variant="h1" textAlign="center">
-                    Interactive tutorials {'\n'} for Profound Academy
+                    Interactive tutorials for Profound Academy
                 </Typography>
             </Stack>
         </main>
