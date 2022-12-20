@@ -2,7 +2,6 @@
 
 import {memo, createContext, ReactNode, useState, useEffect} from "react";
 import {ThemeProvider as MuiThemeProvider, createTheme} from "@mui/material/styles";
-import {useStickyState} from "./stickystate";
 
 export type PaletteMode = 'light' | 'dark';
 
@@ -61,20 +60,16 @@ export const ColorModeContext = createContext<ColorModeContextProps>({
 });
 
 function ThemeProvider({children}: {children: ReactNode}) {
-    const [mode, setMode] = useStickyState<PaletteMode>('light', 'app-mode');
-
-    // For server-side rendering (it does not have access to the user-preferred theme => we reload it on the client-side)
-    const [currentMode, setCurrentMode] = useState<PaletteMode>('light');
+    const [mode, setMode] = useState<PaletteMode>('light');
     const [theme, setTheme] = useState(createTheme(getDesignTokens('light')));
 
     useEffect(() => {
         const currentTheme = createTheme(getDesignTokens(mode));
         setTheme(currentTheme);
-        setCurrentMode(mode);
     }, [mode]);
 
     return <>
-        <ColorModeContext.Provider value={{mode: currentMode, setMode: setMode}}>
+        <ColorModeContext.Provider value={{mode, setMode}}>
             <MuiThemeProvider theme={theme}>
                 {children}
             </MuiThemeProvider>
