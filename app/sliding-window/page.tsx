@@ -52,6 +52,8 @@ function Page() {
         setLeft(l);
     }
 
+    console.log(document?.body?.style?.backgroundColor);
+
     return <>
         <Stack direction="column" alignItems="center" alignContent="center">
             <Box position="relative" width="100%">
