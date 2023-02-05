@@ -59,12 +59,12 @@ function Page() {
                 <Box flex={1} />
                 {currentWord.split('').map((letter, index) => (
                     <Stack marginX={2} direction="column" alignContent="center" alignItems="center" key={`letter-${index}-${letter}`}>
-                        <Typography variant="caption" marginBottom={-1} visibility={left === index ? 'visible' : 'hidden'}>left</Typography>
-                        <ArrowDropDownIcon visibility={left === index ? 'visible' : 'hidden'} />
-                        <Typography variant="caption">{index}</Typography>
-                        <Typography variant="h3" fontWeight="bold">{letter}</Typography>
-                        <ArrowDropUpIcon visibility={right === index ? 'visible' : 'hidden'} />
-                        <Typography variant="caption" marginTop={-1} visibility={right === index ? 'visible' : 'hidden'}>right</Typography>
+                        <Typography color="neutral.contrastText" variant="caption" marginBottom={-1} visibility={left === index ? 'visible' : 'hidden'}>left</Typography>
+                        <ArrowDropDownIcon color="disabled" visibility={left === index ? 'visible' : 'hidden'} />
+                        <Typography color="neutral.contrastText" variant="caption">{index}</Typography>
+                        <Typography color="neutral.contrastText" variant="h3" fontWeight="bold">{letter}</Typography>
+                        <ArrowDropUpIcon color="disabled" visibility={right === index ? 'visible' : 'hidden'} />
+                        <Typography color="neutral.contrastText" variant="caption" marginTop={-1} visibility={right === index ? 'visible' : 'hidden'}>right</Typography>
                     </Stack>
                 ))}
                 <Box flex={1} />
@@ -72,9 +72,9 @@ function Page() {
             </Box>
 
             <Stack direction="row" spacing={2} alignItems="center">
-                <Button variant="outlined" startIcon={<AutorenewIcon />} onClick={onGenerateNewClicked} size="small">Generate new</Button>
+                <Button variant="contained" startIcon={<AutorenewIcon />} onClick={onGenerateNewClicked} size="small" sx={{bgcolor: 'white', color: 'neutral.contrastText'}}>Generate new</Button>
                 <Button variant="contained" endIcon={<FastForwardIcon />} onClick={onNextClicked} size="small" disabled={right === currentWord.length - 1}>Next</Button>
-                <Typography variant="body2">Best length: {bestLength}</Typography>
+                <Typography variant="body2" color="neutral.contrastText">Best length: {bestLength}</Typography>
             </Stack>
         </Stack>
     </>
