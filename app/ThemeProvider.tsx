@@ -27,7 +27,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
 
                 console: {main: '#e0e0e0'},
                 secondaryAction: {main: '#000000'},
-                neutral: {main: '#ffffff', contrastText: '#4D4D4D'},
+                neutral: {main: '#ffffff', contrastText: '#212121'},
                 unavailable: {main: '#363636'},
             },
         }
