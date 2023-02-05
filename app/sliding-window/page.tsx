@@ -7,6 +7,7 @@ import AutorenewIcon from '@mui/icons-material/Autorenew';
 import FastForwardIcon from "@mui/icons-material/FastForward";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import Box from "@mui/material/Box";
 
 function Page() {
     const [currentWord, setCurrentWord] = useState<string>('hello, world!');
@@ -53,18 +54,22 @@ function Page() {
 
     return <>
         <Stack direction="column" alignItems="center" alignContent="center">
+            <Box position="relative" width="100%">
             <Stack direction="row" alignItems="center" marginY={5} sx={{ overflowX: 'auto' }}>
-            {currentWord.split('').map((letter, index) => (
-                <Stack marginX={2} direction="column" alignContent="center" alignItems="center" key={`letter-${index}-${letter}`}>
-                    <Typography variant="caption" marginBottom={-1} visibility={left === index ? 'visible' : 'hidden'}>left</Typography>
-                    <ArrowDropDownIcon visibility={left === index ? 'visible' : 'hidden'} />
-                    <Typography variant="caption">{index}</Typography>
-                    <Typography variant="h3" fontWeight="bold">{letter}</Typography>
-                    <ArrowDropUpIcon visibility={right === index ? 'visible' : 'hidden'} />
-                    <Typography variant="caption" marginTop={-1} visibility={right === index ? 'visible' : 'hidden'}>right</Typography>
-                </Stack>
-            ))}
+                <Box flex={1} />
+                {currentWord.split('').map((letter, index) => (
+                    <Stack marginX={2} direction="column" alignContent="center" alignItems="center" key={`letter-${index}-${letter}`}>
+                        <Typography variant="caption" marginBottom={-1} visibility={left === index ? 'visible' : 'hidden'}>left</Typography>
+                        <ArrowDropDownIcon visibility={left === index ? 'visible' : 'hidden'} />
+                        <Typography variant="caption">{index}</Typography>
+                        <Typography variant="h3" fontWeight="bold">{letter}</Typography>
+                        <ArrowDropUpIcon visibility={right === index ? 'visible' : 'hidden'} />
+                        <Typography variant="caption" marginTop={-1} visibility={right === index ? 'visible' : 'hidden'}>right</Typography>
+                    </Stack>
+                ))}
+                <Box flex={1} />
             </Stack>
+            </Box>
 
             <Stack direction="row" spacing={2} alignItems="center">
                 <Button variant="outlined" startIcon={<AutorenewIcon />} onClick={onGenerateNewClicked} size="small">Generate new</Button>
