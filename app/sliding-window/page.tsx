@@ -52,7 +52,10 @@ function Page() {
         setLeft(l);
     }
 
-    console.log(document?.body?.style?.backgroundColor);
+    if( typeof document !== 'undefined' ) {
+        console.log('document.background:', document.body.style.backgroundColor);
+        console.log('all:', document.body.style);
+    }
 
     return <>
         <Stack direction="column" alignItems="center" alignContent="center">
