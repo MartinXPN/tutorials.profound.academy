@@ -28,7 +28,6 @@ function Page() {
 
         const newPrime = [...prime];
         newPrime[i] = 1;
-        const newNumbers = new Set<number>();
 
         // Mark all multiples of i as not prime
         for (let j = i * 2; j < n; j += i)
