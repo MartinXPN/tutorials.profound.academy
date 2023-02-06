@@ -1,5 +1,6 @@
 'use client';
-import {memo, useState} from "react";
+
+import {useState} from "react";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -80,4 +81,4 @@ function Page() {
     </>
 }
 
-export default memo(Page);
+export default Page;
