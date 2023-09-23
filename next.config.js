@@ -1,15 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     experimental: {
-        appDir: true,
-    },
-    webpack(config) {
-        config.module.rules.push({
-            test: /\.svg$/,
-            use: ["@svgr/webpack"]
-        });
-
-        return config;
+        turbo: {
+            rules: {
+                // Dirty hack to support SVG files (somevg in our case): https://github.com/vercel/next.js/issues/48140
+                '*.somevg': ['@svgr/webpack'],
+            }
+        }
     },
 }
 

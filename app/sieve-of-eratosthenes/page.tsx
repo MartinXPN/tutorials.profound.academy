@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
-import {ToggleButton} from "@mui/material";
+import ToggleButton from "@mui/material/ToggleButton";
 import Typography from "@mui/material/Typography";
 
 function Page() {

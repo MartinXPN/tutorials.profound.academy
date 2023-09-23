@@ -1,2 +1,3 @@
-import Logo from "./logo.svg";
+// @ts-ignore
+import Logo from "./logo.somevg";
 export default Logo;
