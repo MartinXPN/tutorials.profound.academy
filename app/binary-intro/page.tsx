@@ -16,7 +16,7 @@ const Page = () => {
     const binaryNumber = decimalNumber.toString(2);
 
     return <Box display="flex" justifyContent="center" width="100%">
-        <Stack direction="column" alignItems="center">
+        <Stack justifyContent="center">
             <Box>
                 <Stack direction="row" alignItems="center">
                     <Stack direction="column" spacing={1}>
@@ -28,13 +28,13 @@ const Page = () => {
                         </Button>
                     </Stack>
                     <Stack direction="column" alignItems="center">
-                        <Typography variant="h6" marginY="16px">
+                        <Typography variant="h6" marginX="16px">
                             Decimal
                         </Typography>
                         <Typography variant="h4">{decimalNumber}</Typography>
                     </Stack>
                     <Stack direction="column" alignItems="center">
-                        <Typography variant="h6" marginY="16px">
+                        <Typography variant="h6"  marginX="16px">
                             Binary
                         </Typography>
                         <Typography variant="h4">{binaryNumber}</Typography>
