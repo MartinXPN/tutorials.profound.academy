@@ -29,8 +29,7 @@ const Page = () => {
     <Box
       display="flex"
       justifyContent="center"
-      alignItems="center"
-      minHeight="100vh"
+      width="100%"
     >
       <Stack direction="column" alignItems="center">
         <Box>
@@ -66,4 +65,3 @@ const Page = () => {
 };
 
 export default Page;
-
