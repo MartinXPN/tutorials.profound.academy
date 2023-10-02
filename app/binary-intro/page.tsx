@@ -15,37 +15,30 @@ const Page = () => {
 
     const binaryNumber = decimalNumber.toString(2);
 
-    return <Box display="flex" justifyContent="center" width="100%">
-        <Stack justifyContent="center">
-            <Box>
-                <Stack direction="row" alignItems="center">
-                    <Stack direction="column" spacing={1}>
-                        <Button variant="contained" size="small" onClick={increment}>
-                            <ArrowDropUpIcon />
-                        </Button>
-                        <Button variant="contained" size="small" onClick={decrement}>
-                            <ArrowDropDownIcon />
-                        </Button>
-                    </Stack>
-                    <Stack direction="column" alignItems="center">
-                        <Typography variant="h6" marginX="16px">
-                            Decimal
-                        </Typography>
-                        <Typography variant="h4">{decimalNumber}</Typography>
-                    </Stack>
-                    <Stack direction="column" alignItems="center">
-                        <Typography variant="h6"  marginX="16px">
-                            Binary
-                        </Typography>
-                        <Typography variant="h4">{binaryNumber}</Typography>
-                    </Stack>
-                    <Button variant="contained" size="small" endIcon={<AutorenewIcon />} onClick={reset}>
-                        Reset
-                    </Button>
+    return <>
+        <Box display="flex" justifyContent="center" padding={4}>
+            <Stack direction="row" alignItems="center" spacing={4}>
+                <Stack direction="column" spacing={1}>
+                    <Button variant="contained" size="small" onClick={increment}><ArrowDropUpIcon /></Button>
+                    <Button variant="contained" size="small" onClick={decrement}><ArrowDropDownIcon /></Button>
                 </Stack>
-            </Box>
-        </Stack>
-    </Box>;
+
+                <Stack direction="column" alignItems="center">
+                    <Typography variant="h6">Decimal</Typography>
+                    <Typography variant="h4">{decimalNumber}</Typography>
+                </Stack>
+
+                <Stack direction="column" alignItems="center">
+                    <Typography variant="h6">Binary</Typography>
+                    <Typography variant="h4">{binaryNumber}</Typography>
+                </Stack>
+
+                <Button variant="contained" size="small" endIcon={<AutorenewIcon />} onClick={reset}>
+                    Reset
+                </Button>
+            </Stack>
+        </Box>
+    </>
 };
 
 export default Page;
