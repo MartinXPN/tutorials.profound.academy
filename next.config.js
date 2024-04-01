@@ -2,8 +2,8 @@
 const nextConfig = {
     webpack(config) {
         config.module.rules.push({
-            test: /\.somevg$/,
-            use: ["@svgr/webpack"]
+            test: /\.svg$/i,
+            use: ['@svgr/webpack'],
         });
 
         return config;
@@ -11,10 +11,12 @@ const nextConfig = {
     experimental: {
         turbo: {
             rules: {
-                // Dirty hack to support SVG files (somevg in our case): https://github.com/vercel/next.js/issues/48140
-                '*.somevg': ['@svgr/webpack'],
-            }
-        }
+                '*.svg': {
+                    loaders: ['@svgr/webpack'],
+                    as: '*.js',
+                },
+            },
+        },
     },
 }
 
