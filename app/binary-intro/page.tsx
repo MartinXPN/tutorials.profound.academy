@@ -1,7 +1,10 @@
 'use client';
 
-import { useState } from 'react';
-import { Typography, Stack, Button, Box } from '@mui/material';
+import {useState} from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
@@ -19,8 +22,8 @@ const Page = () => {
         <Box display="flex" justifyContent="center" padding={4}>
             <Stack direction="row" alignItems="center" spacing={4}>
                 <Stack direction="column" spacing={1}>
-                    <Button variant="contained" size="small" onClick={increment}><ArrowDropUpIcon /></Button>
-                    <Button variant="contained" size="small" onClick={decrement}><ArrowDropDownIcon /></Button>
+                    <Button variant="contained" size="small" onClick={increment}><ArrowDropUpIcon/></Button>
+                    <Button variant="contained" size="small" onClick={decrement}><ArrowDropDownIcon/></Button>
                 </Stack>
 
                 <Stack direction="column" alignItems="center">
@@ -33,7 +36,7 @@ const Page = () => {
                     <Typography variant="h4">{binaryNumber}</Typography>
                 </Stack>
 
-                <Button variant="contained" size="small" endIcon={<AutorenewIcon />} onClick={reset}>
+                <Button variant="contained" size="small" endIcon={<AutorenewIcon/>} onClick={reset}>
                     Reset
                 </Button>
             </Stack>
