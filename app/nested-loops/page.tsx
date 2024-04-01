@@ -20,29 +20,35 @@ const Page = () => {
     const [m, setM] = useState(-1);
     const [s, setS] = useState(-1);
     const [stage, setStage] = useState<'h' | 'm' | 's' | 'print'>('h');
+    const [nextStage, setNextStage] = useState<'h' | 'm' | 's' | 'print' | null>(null);
     const highlightLine = stage === 'h' ? 1 : stage === 'm' ? 2 : stage === 's' ? 3 : 4;
 
 
     // Emulate the clock
     const onNextClicked = () => {
+        if (nextStage) {
+            setStage(nextStage);
+            setNextStage(null);
+            return;
+        }
         if (stage === 'h') {
             setH(h => h + 1);
             setM(-1);
             setS(-1);
-            setStage('m');
+            setNextStage('m');
         }
         else if (stage === 'm') {
             if (m === 9)
                 return setStage('h');
             setM(m => m + 1);
             setS(-1);
-            setStage('s');
+            setNextStage('s');
         }
         else if (stage === 's') {
             if (s == 9)
                 return setStage('m');
             setS(s => s + 1);
-            setStage('print');
+            setNextStage('print');
         }
         else {
             setStage('s');
@@ -54,6 +60,7 @@ const Page = () => {
         setM(-1);
         setS(-1);
         setStage('h');
+        setNextStage(null);
     }
 
 
@@ -66,7 +73,7 @@ const Page = () => {
         catch (err) {
             console.warn('prismjs highlight error', err);
         }
-    }, [codeRef, highlightLine]);
+    }, [codeRef, highlightLine, stage, nextStage]);
 
     return <>
         <Box display="flex" justifyContent="center" padding={4}>
