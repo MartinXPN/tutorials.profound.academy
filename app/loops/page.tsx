@@ -74,15 +74,15 @@ const Page = () => {
                 <code className="language-python" ref={codeRef}>{endent`
                     numbers = [-2, 7, 0, 1, -5, 4, 9, -8]
                     total = 0
-                    for n in numbers:                   # n = ${n === -1 ? '-' : n}
-                        square = n ** 2                 # square = ${n === -1 || ['n', 'newN'].includes(stage) ? '-' : n ** 2}
-                        total += square                 # total = ${n === -1 || ['n', 'newN', 'square'].includes(stage) ? '-' : total}
-                        print(f'n^2 = {square}')        # ${n === -1 || ['n', 'newN', 'square', 'total'].includes(stage) ? '' : `n^2 = ${n ** 2}`}
-                        print(f'Total: {total}')        # ${n === -1 || ['n', 'newN', 'square', 'total', 'print1'].includes(stage)
+                    for n in numbers:               # n = ${n === -1 ? '-' : n}
+                        square = n ** 2             # square = ${n === -1 || ['n', 'newN'].includes(stage) ? '-' : n ** 2}
+                        total += square             # total = ${n === -1 || ['n', 'newN', 'square'].includes(stage) ? '-' : total}
+                        print(f'n^2 = {square}')    # ${n === -1 || ['n', 'newN', 'square', 'total'].includes(stage) ? '' : `n^2 = ${n ** 2}`}
+                        print(f'Total: {total}')    # ${n === -1 || ['n', 'newN', 'square', 'total', 'print1'].includes(stage)
                             ? '' 
                             : `Total: ${total}`}
                     
-                    print('Done!')                      # ${stage !== 'done' ? '             .' : 'Done!        .'}
+                    print('Done!')                  # ${stage !== 'done' ? '            .' : 'Done!       .'}
                 `}</code>
             </pre>
 
