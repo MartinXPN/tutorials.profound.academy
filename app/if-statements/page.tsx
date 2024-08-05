@@ -69,7 +69,7 @@ const Page = () => {
                         thirst = 0
                     
                     print('We paid:', payment, 'and thirst levels are:', thirst)
-                    # ${line === 9 ? `We paid: ${thirst > 30 ? price : 0} and thirst levels are: ${thirst}` : ''}
+                    # ${line === 9 ? `We paid: ${thirst > 30 ? price : 0} and thirst levels are: ${thirst > 30 ? 0 : thirst}` : ''}
                 `}</code>
             </pre>
 
