@@ -88,7 +88,7 @@ const Page = () => {
 
             <Box display="flex" justifyContent="center" padding={1}>
                 <Stack direction="row" spacing={2}>
-                    <Button variant="contained" size="small" endIcon={<SkipNextIcon/>} onClick={onNextClicked}>
+                    <Button variant="contained" size="small" endIcon={<SkipNextIcon/>} onClick={onNextClicked} disabled={stage === 'done'}>
                         Next
                     </Button>
                     <Button variant="outlined" size="small" endIcon={<AutorenewIcon/>} onClick={reset}>
