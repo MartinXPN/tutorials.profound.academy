@@ -7,7 +7,9 @@ import {Roboto} from "next/font/google";
 const font = Roboto({weight: ['300', '400', '500', '700'], subsets: ['latin']});
 
 
-const getDesignTokens = () => ({
+
+const theme = createTheme({
+    cssVariables: true,
     typography: {
         fontFamily: font.style.fontFamily,
         h1: {fontSize: 42, fontWeight: 'bold', fontFamily: font.style.fontFamily},
@@ -31,19 +33,11 @@ const getDesignTokens = () => ({
         info: {main: '#f44336'},
         success: {main: '#4caf50'},
         error: {main: '#f44336'},
-
-        secondaryAction: {main: '#000000'},
-        neutral: {main: '#ffffff', contrastText: '#212121'},
-        unavailable: {main: '#363636'},
     },
 });
 
-const theme = createTheme(getDesignTokens());
-
 
 function ThemeProvider({children}: {children: ReactNode}) {
-
-
     return <>
         <MuiThemeProvider theme={theme}>
             {children}
