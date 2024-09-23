@@ -1,7 +1,13 @@
 import './globals.css'
 import {ReactNode} from "react";
-import EmotionRootStyleRegistry from './EmotionRootStyleRegistry';
-import ThemeProvider from "./ThemeProvider";
+import {Roboto} from "next/font/google";
+import '@mui/material-pigment-css/styles.css';
+
+const font = Roboto({
+    weight: ['300', '400', '500', '700'],
+    subsets: ['latin'],
+    variable: '--tutorials-font-family',
+});
 
 export default function RootLayout({children}: {
     children: ReactNode
@@ -15,12 +21,8 @@ export default function RootLayout({children}: {
                 <link rel="icon" href="/favicon.ico"/>
             </head>
 
-            <body>
-                <EmotionRootStyleRegistry>
-                <ThemeProvider>
+            <body className={`${font.variable}`}>
                     {children}
-                </ThemeProvider>
-                </EmotionRootStyleRegistry>
             </body>
         </html>
     );

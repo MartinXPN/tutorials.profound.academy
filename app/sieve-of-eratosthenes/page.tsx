@@ -3,7 +3,7 @@
 import {useEffect, useState} from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import ToggleButton from "@mui/material/ToggleButton";
 import Typography from "@mui/material/Typography";
@@ -38,7 +38,7 @@ function Page() {
     return <>
         <Stack direction="column" alignItems="center" alignContent="center">
             <Grid container>
-                {prime.map((p, i) => <Grid item key={`prime-${i}`}>
+                {prime.map((p, i) => <Grid key={`prime-${i}`}>
                     <ToggleButton value={i} selected={p === 1} disabled={p === -1} onClick={() => onNumberClicked(i)}
                                   sx={{transitionDelay: `${i}0ms`, width: 50}}>
                         <Typography fontWeight="bold">{i}</Typography>

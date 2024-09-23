@@ -60,12 +60,12 @@ function Page() {
                 <Box flex={1} />
                 {currentWord.split('').map((letter, index) => (
                     <Stack marginX={2} direction="column" alignContent="center" alignItems="center" key={`letter-${index}-${letter}`}>
-                        <Typography variant="caption" marginBottom={-1} visibility={left === index ? 'visible' : 'hidden'}>left</Typography>
+                        <Typography variant="caption" marginBottom={-1} sx={{visibility: left === index ? 'visible' : 'hidden'}}>left</Typography>
                         <ArrowDropDownIcon visibility={left === index ? 'visible' : 'hidden'} />
                         <Typography variant="caption">{index}</Typography>
                         <Typography variant="h3" fontWeight="bold">{letter}</Typography>
                         <ArrowDropUpIcon visibility={right === index ? 'visible' : 'hidden'} />
-                        <Typography variant="caption" marginTop={-1} visibility={right === index ? 'visible' : 'hidden'}>right</Typography>
+                        <Typography variant="caption" marginTop={-1} sx={{visibility: right === index ? 'visible' : 'hidden'}}>right</Typography>
                     </Stack>
                 ))}
                 <Box flex={1} />
