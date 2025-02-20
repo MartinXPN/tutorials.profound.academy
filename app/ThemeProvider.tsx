@@ -2,7 +2,9 @@
 
 import {memo, ReactNode} from "react";
 import {ThemeProvider as MuiThemeProvider, createTheme} from "@mui/material/styles";
+import {AppRouterCacheProvider} from "@mui/material-nextjs/v15-appRouter";
 import {Roboto} from "next/font/google";
+import {CssBaseline} from "@mui/material";
 
 const font = Roboto({weight: ['300', '400', '500', '700'], subsets: ['latin']});
 
@@ -12,19 +14,12 @@ const theme = createTheme({
     cssVariables: true,
     typography: {
         fontFamily: font.style.fontFamily,
-        h1: {fontSize: 42, fontWeight: 'bold', fontFamily: font.style.fontFamily},
-        h2: {fontSize: 30, fontFamily: font.style.fontFamily},
-        h3: {fontSize: 26, fontFamily: font.style.fontFamily},
-        h4: {fontSize: 20, fontFamily: font.style.fontFamily},
-        h5: {fontSize: 18, fontFamily: font.style.fontFamily},
-        h6: {fontSize: 16, fontFamily: font.style.fontFamily},
-        subtitle1: {fontFamily: font.style.fontFamily},
-        subtitle2: {fontFamily: font.style.fontFamily},
-        body1: {fontFamily: font.style.fontFamily},
-        body2: {fontFamily: font.style.fontFamily},
-        button: {fontFamily: font.style.fontFamily},
-        caption: {fontFamily: font.style.fontFamily},
-        overline: {fontFamily: font.style.fontFamily},
+        h1: {fontSize: 42, fontWeight: 'bold'},
+        h2: {fontSize: 30},
+        h3: {fontSize: 26},
+        h4: {fontSize: 20},
+        h5: {fontSize: 18},
+        h6: {fontSize: 16},
     },
     palette: {
         background: {default: '#ffffff', paper: '#ffffff'},
@@ -39,9 +34,12 @@ const theme = createTheme({
 
 function ThemeProvider({children}: {children: ReactNode}) {
     return <>
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
         <MuiThemeProvider theme={theme}>
+            <CssBaseline />
             {children}
         </MuiThemeProvider>
+        </AppRouterCacheProvider>
     </>
 }
 
