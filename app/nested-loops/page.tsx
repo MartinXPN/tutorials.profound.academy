@@ -76,8 +76,8 @@ const Page = () => {
     }, [codeRef, highlightLine, stage, nextStage]);
 
     return <>
-        <Box display="flex" justifyContent="center" alignItems="center">
-        <Box padding={1} sx={{overflowX: 'auto'}}>
+        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+        <Box sx={{padding: 1, overflowX: 'auto'}}>
             <pre data-line={`${highlightLine}`} style={{paddingLeft: '30px'}}>
                 <code className="language-python" ref={codeRef}>
                     {endent`
@@ -89,7 +89,7 @@ const Page = () => {
                 </code>
             </pre>
 
-            <Box display="flex" justifyContent="center" padding={1}>
+            <Box sx={{display: "flex", justifyContent: "center", padding: 1}}>
                 <Stack direction="row" spacing={2}>
                     <Button variant="contained" size="small" endIcon={<SkipNextIcon/>} onClick={onNextClicked}>
                         Next

@@ -54,25 +54,25 @@ function Page() {
     }
 
     return <>
-        <Stack direction="column" alignItems="center" alignContent="center">
-            <Box position="relative" width="100%">
-            <Stack direction="row" alignItems="center" marginY={5} sx={{ overflowX: 'auto' }}>
-                <Box flex={1} />
+        <Stack direction="column" sx={{alignItems: "center", alignContent: "center"}}>
+            <Box sx={{position: "relative",width: "100%"}}>
+            <Stack direction="row" sx={{alignItems: "center", marginY: 5, overflowX: 'auto'}}>
+                <Box sx={{flex: 1}} />
                 {currentWord.split('').map((letter, index) => (
-                    <Stack marginX={2} direction="column" alignContent="center" alignItems="center" key={`letter-${index}-${letter}`}>
-                        <Typography variant="caption" marginBottom={-1} visibility={left === index ? 'visible' : 'hidden'}>left</Typography>
+                    <Stack direction="column" key={`letter-${index}-${letter}`} sx={{marginX: 2, alignContent: "center", alignItems: "center"}}>
+                        <Typography variant="caption" sx={{marginBottom: -1, visibility: left === index ? 'visible' : 'hidden'}}>left</Typography>
                         <ArrowDropDownIcon visibility={left === index ? 'visible' : 'hidden'} />
                         <Typography variant="caption">{index}</Typography>
-                        <Typography variant="h3" fontWeight="bold">{letter}</Typography>
+                        <Typography variant="h3" sx={{fontWeight: "bold"}}>{letter}</Typography>
                         <ArrowDropUpIcon visibility={right === index ? 'visible' : 'hidden'} />
-                        <Typography variant="caption" marginTop={-1} visibility={right === index ? 'visible' : 'hidden'}>right</Typography>
+                        <Typography variant="caption" sx={{marginTop: -1, visibility: right === index ? 'visible' : 'hidden'}}>right</Typography>
                     </Stack>
                 ))}
-                <Box flex={1} />
+                <Box sx={{flex: 1}} />
             </Stack>
             </Box>
 
-            <Stack direction="row" spacing={2} alignItems="center">
+            <Stack direction="row" spacing={2} sx={{alignItems: "center"}}>
                 <Button variant="outlined" startIcon={<AutorenewIcon />} onClick={onGenerateNewClicked} size="small">Generate new</Button>
                 <Button variant="contained" endIcon={<FastForwardIcon />} onClick={onNextClicked} size="small" disabled={right === currentWord.length - 1}>Next</Button>
                 <Typography variant="body2" >Best length: {bestLength}</Typography>

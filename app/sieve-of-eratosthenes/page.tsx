@@ -36,17 +36,17 @@ function Page() {
     }
 
     return <>
-        <Stack direction="column" alignItems="center" alignContent="center">
+        <Stack direction="column" sx={{alignItems: "center", alignContent: "center"}}>
             <Grid container>
                 {prime.map((p, i) => <Grid key={`prime-${i}`}>
                     <ToggleButton value={i} selected={p === 1} disabled={p === -1} onClick={() => onNumberClicked(i)}
                                   sx={{transitionDelay: `${i}0ms`, width: 50}}>
-                        <Typography fontWeight="bold">{i}</Typography>
+                        <Typography sx={{fontWeight: "bold"}}>{i}</Typography>
                     </ToggleButton>
                 </Grid>)}
             </Grid>
 
-            <Stack direction="row" spacing={2} alignItems="center" marginY={2}>
+            <Stack direction="row" spacing={2} sx={{alignItems: "center", marginY: 2}}>
                 <Button variant="outlined" startIcon={<AutorenewIcon />} onClick={onGenerateNewClicked} size="small">
                     Generate New
                 </Button>

@@ -19,19 +19,19 @@ const Page = () => {
     const binaryNumber = decimalNumber.toString(2);
 
     return <>
-        <Box display="flex" justifyContent="center" padding={4}>
-            <Stack direction="row" alignItems="center" spacing={4}>
+        <Box sx={{display: "flex", justifyContent: "center", padding: 4}}>
+            <Stack direction="row" spacing={4} sx={{alignItems: "center"}}>
                 <Stack direction="column" spacing={1}>
                     <Button variant="contained" size="small" onClick={increment}><ArrowDropUpIcon/></Button>
                     <Button variant="contained" size="small" onClick={decrement}><ArrowDropDownIcon/></Button>
                 </Stack>
 
-                <Stack direction="column" alignItems="center">
+                <Stack direction="column" sx={{alignItems: "center"}}>
                     <Typography variant="h6">Decimal</Typography>
                     <Typography variant="h4">{decimalNumber}</Typography>
                 </Stack>
 
-                <Stack direction="column" alignItems="center">
+                <Stack direction="column" sx={{alignItems: "center"}}>
                     <Typography variant="h6">Binary</Typography>
                     <Typography variant="h4">{binaryNumber}</Typography>
                 </Stack>
