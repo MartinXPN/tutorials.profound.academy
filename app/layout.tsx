@@ -5,8 +5,8 @@ import ThemeProvider from "./ThemeProvider";
 export default function RootLayout({children}: {
     children: ReactNode
 }) {
-    return (
-        <html lang="en">
+    return <>
+        <html lang="en" suppressHydrationWarning>
             <head>
                 <title>Tutorials for Profound Academy</title>
                 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -20,5 +20,5 @@ export default function RootLayout({children}: {
                 </ThemeProvider>
             </body>
         </html>
-    );
+    </>
 }
